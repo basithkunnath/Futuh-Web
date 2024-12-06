@@ -140,7 +140,7 @@ travenv/
 >>>>>>> d0a1c9df530b11bcaec951dfdd9bfcee1996ae1a
 .venv
 env/
-venv/
+provenv/
 ENV/
 env.bak/
 venv.bak/
