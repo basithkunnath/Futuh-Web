@@ -84,6 +84,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'futuhtravels.wsgi.application'
 
 
+
 # Database
 
 DATABASES = {
