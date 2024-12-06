@@ -14,5 +14,6 @@
             "src":"/(.*)",
             "dest":"futuhtravels/wsgi.py"
         }
-    ]
+    ],
+    "outputDirectory": "static"
 }
