@@ -50,8 +50,15 @@ INSTALLED_APPS = [
     'packages',
     'gallery',
     'contact',
+      # s3 bucket
+    'storages'
   
 ]
+
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME = config('AWS_REGION')  # e.g., 'us-east-1'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware', # for production
@@ -162,6 +169,8 @@ EMAIL_USE_TLS = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# Media Storage
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+MEDIA_URL = f'https://futuhbucket.s3.eu-north-1.amazonaws.com/'
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
