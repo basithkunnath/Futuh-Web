@@ -50,9 +50,6 @@ INSTALLED_APPS = [
     'packages',
     'gallery',
     'contact',
-      # s3 bucket
-    'storages'
-  
 ]
 
 
@@ -142,9 +139,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 # Directory to collect all static files for production
 STATIC_ROOT = BASE_DIR / "static"
- # STATICFILES_DIRS = [
- # os.path.join(BASE_DIR, 'static')
- # ] 
+# STATICFILES_DIRS = [
+# os.path.join(BASE_DIR, 'static')
+#  ] 
 
 
 
@@ -182,4 +179,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, '/tmp/uploads')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
