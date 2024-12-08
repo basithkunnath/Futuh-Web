@@ -68,7 +68,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'futuhtravels.urls'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
 
 
 TEMPLATES = [
