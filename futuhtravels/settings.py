@@ -31,7 +31,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = True
-ALLOWED_HOSTS = ['.vercel.app',]
+ALLOWED_HOSTS = [ '127.0.0.1','.vercel.app',]
 
 
 
@@ -50,6 +50,9 @@ INSTALLED_APPS = [
     'packages',
     'gallery',
     'contact',
+    # For Cloudinary
+    'cloudinary',
+    'cloudinary_storage'
     
 ]
 
@@ -66,6 +69,15 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'futuhtravels.urls'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+# Set up Cloudinary storage for media files
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dtpzw8uxo',
+    'API_KEY': '551647889431627',
+    'API_SECRET': 'GtyqjC_4js9dG4x7o-rkgmE1b-w',
+}
 
 
 TEMPLATES = [
