@@ -1,5 +1,5 @@
 from django.db import models
-
+from cloudinary.models import CloudinaryField
 # Create your models here.
 
 class Carsousel(models.Model):
@@ -76,7 +76,7 @@ class AboutSection(models.Model):
 
 
 class Destinations(models.Model):
-    destination_image = models.ImageField(upload_to='destinations/', blank=True, null=True)
+    destination_image = CloudinaryField('image')
     destination_name = models.CharField(max_length=100)
 
     def __str__(self):

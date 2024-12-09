@@ -13,10 +13,18 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path 
 import os
 from decouple import config
-import cloudinary_storage, cloudinary
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -43,14 +51,13 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
-    'cloudinary',
       # Custom Apps
     'home',
     'about',
     'packages',
     'contact',
+    'cloudinary',
     
 ]
 
@@ -167,12 +174,15 @@ EMAIL_USE_TLS = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+cloudinary.config(
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dtpzw8uxo',
-    'API_KEY': '742765443974481',
-    'API_SECRET': 'EaOJ3IFbTDDF1ICU1dgoRvdwR1U',
-}
+    cloud_name = "dtpzw8uxo",
+    api_key = "742765443974481",
+    api_secret = "EaOJ3IFbTDDF1ICU1dgoRvdwR1U",
+
+)
+
+
 
 
 # Media Storage
