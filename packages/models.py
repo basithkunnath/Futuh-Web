@@ -1,13 +1,13 @@
 from django.db import models
-
+from cloudinary.models import CloudinaryField
 # Create your models here.
 
 
 
 class Packages(models.Model):
-    image = models.ImageField(upload_to='packages_images/', blank=True, null=True,default=0)
-    sub_image_1 = models.ImageField(upload_to='packages_images/', blank=True, null=True)
-    sub_image_2 = models.ImageField(upload_to='packages_images/', blank=True, null=True)
+    image = CloudinaryField('image')
+    sub_image_1 = CloudinaryField('image')
+    sub_image_2 = CloudinaryField('image')
     title = models.CharField(max_length=100)
     short_description = models.TextField(null=True)
     country = models.CharField(max_length=100,default='Unknown Country')

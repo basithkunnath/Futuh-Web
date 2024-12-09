@@ -5,15 +5,15 @@ from cloudinary.models import CloudinaryField
 class Carsousel(models.Model):
     country_name = models.CharField(max_length=100)
     sub_destinations = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='city_images/', blank=True, null=True)
+    image = CloudinaryField('image')
 
     def __str__(self):
         return self.country_name
 
 
 class Introduction(models.Model):
-    logo_image_1 = models.ImageField(upload_to='logo_images/', blank=True, null=True)
-    logo_image_2 = models.ImageField(upload_to='logo_images/', blank=True, null=True)
+    logo_image_1 = CloudinaryField('image')
+    logo_image_2 = CloudinaryField('image')
     welcome_title = models.CharField(max_length=100)
     welcome_paragraph = models.CharField(max_length=1000)
     
@@ -37,7 +37,7 @@ class Whytravel(models.Model):
 
 
 class UpcomingTrips(models.Model):
-    package_image = models.ImageField(upload_to='package_images/', blank=True, null=True)
+    package_image = CloudinaryField('image')
     package_title = models.CharField(max_length=100)
     package_shot_description = models.CharField(max_length=100)
   
@@ -52,7 +52,7 @@ class UmrahPackage(models.Model):
     umrah_package_sub_title = models.CharField(max_length=100)
     umrah_package_short_description = models.TextField(null=True)
     umrah_package_free_text = models.CharField(max_length=100)
-    umrah_package_bg_image = models.ImageField(upload_to='umrah_package_bg_images/', blank=True, null=True)
+    umrah_package_bg_image = CloudinaryField('image')
   
     
 
@@ -65,7 +65,7 @@ class AboutSection(models.Model):
     about_title = models.CharField(max_length=100)
     about_first_paragraph = models.TextField(null=True)
     about_second_paragraph = models.TextField(null=True)
-    about_image = models.ImageField(upload_to='about_images/', blank=True, null=True)
+    about_image = CloudinaryField('image')
   
     
 
