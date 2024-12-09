@@ -76,7 +76,7 @@ class AboutSection(models.Model):
 
 
 class Destinations(models.Model):
-    destination_image = models.ImageField(upload_to='destinations_images/', blank=True, null=True)
+    destination_image = models.ImageField(upload_to='destinations/', blank=True, null=True)
     destination_name = models.CharField(max_length=100)
 
     def __str__(self):
