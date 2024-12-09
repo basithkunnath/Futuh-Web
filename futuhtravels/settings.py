@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary',
       # Custom Apps
     'home',
     'about',
@@ -65,7 +67,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'futuhtravels.urls'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 
 TEMPLATES = [
@@ -164,7 +165,17 @@ EMAIL_USE_TLS = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dtpzw8uxo',
+    'API_KEY': '742765443974481',
+    'API_SECRET': 'EaOJ3IFbTDDF1ICU1dgoRvdwR1U',
+}
+
+
 # Media Storage
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
