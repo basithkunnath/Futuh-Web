@@ -24,6 +24,6 @@ urlpatterns = [
     path('', include('home.urls')),          # Root URL for the home app
     path('about/', include('about.urls')),   # URL prefix for the about app
     path('packages/', include('packages.urls')), # URL prefix for the packages app
-      # URL prefix for the gallery app
+    path('gallery/', include('gallery.urls')),  # URL prefix for the gallery app
     path('contact/', include('contact.urls')),   # URL prefix for the contact app
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
