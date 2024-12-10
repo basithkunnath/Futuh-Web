@@ -11,7 +11,7 @@ body {
   
   :root {
     --bg-color: #8B4513;
-    --second-bg-color: #000000;
+    --second-bg-color: #8B45;
     --text-color: #ffffff;
     --second-text-color: #381f0c;
 }
@@ -805,7 +805,8 @@ body {
     background-image: url('turkey.jpg');
     background-size: cover;
     background-position: center;
-    color:var(--text-color) ;
+    color:var(--bg-color) ;
+    
   }
   
   @media (max-width: 768px) {
@@ -914,6 +915,7 @@ body {
   @media (max-width: 768px) {
     .itinerary-section {
       padding: 10px;
+      margin: 10px;
     }
     .booking-form {
       padding: 20px;
@@ -1101,7 +1103,7 @@ body {
       margin: 0 auto; /* Center the image on larger screens */
       display: block; /* Required for centering with margin */
   }
-  
+
   
   /* Footer */
   
