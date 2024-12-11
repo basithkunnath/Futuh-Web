@@ -17,7 +17,7 @@
 
 <!-- Full-Width Hero Image -->
 <div class="full-width-image-container">
-  <img src="{{ umrah_package_details.hero_image.url }}" alt="Umrah Package Hero Image" class="img-fluid w-100">
+  <img src="{{ umrahdetails.hero_image.url }}" alt="Umrah Package Hero Image" class="img-fluid w-100">
 </div>
 
  
@@ -27,8 +27,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8" data-aos="fade-right">
-          <h2 class="package-title mb-4">{{ umrah_package_details.title }}</h2>
-          <p class="package-description">{{ umrah_package_details.description }}</p>
+          <h2 class="package-title mb-4">{{ umrahdetails.title }}</h2>
+          <p class="package-description">{{ umrahdetails.description }}</p>
           <h3 class="package-highlights-title my-4">Highlights</h3>
           <ul class="package-highlights-list">
             {% for highlight in umrahdetails.highlights %}
