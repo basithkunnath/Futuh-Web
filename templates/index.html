@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load custom_tags %}
 {% block content %}
 
 
@@ -218,21 +219,23 @@
 
 
 
+
+
 <section class="container destinations-section text-center my-5">
   <h1 class="mb-5 fw-bold section-title">Our Destinations</h1>
   <div id="destinationsCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      {% for group in view_destinations|slice:":3" %}
-      <div class="carousel-item {% if forloop.first %}active{% endif %}">
-        <div class="row">
-          {% for destination in group %}
-          <div class="col-md-4">
-            <img src="{{ destination.destination_image.url }}" class="d-block w-100 img-fluid" alt="{{ destination.destination_name }}">
-            <h5 class="mt-2">{{ destination.destination_name }}</h5>
+      {% for group in view_destinations|group_by:3 %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+          <div class="row">
+            {% for destination in group %}
+              <div class="col-md-4">
+                <img src="{{ destination.destination_image.url }}" class="d-block w-100 img-fluid" alt="{{ destination.destination_name }}">
+                <h5 class="mt-2">{{ destination.destination_name }}</h5>
+              </div>
+            {% endfor %}
           </div>
-          {% endfor %}
         </div>
-      </div>
       {% endfor %}
     </div>
     <!-- Carousel Controls -->
@@ -248,20 +251,6 @@
 </section>
 
 
-
-
-<section class="container destinations-section text-center my-5">
-  <h1 class="mb-5 fw-bold section-title" data-aos="fade-up">Our Destinations</h1>
-  <div class="row mt-4">
-    {% for destination in view_destinations %}
-    <!-- First Row of Images -->
-    <div class="col-12 col-md-4 mb-3 position-relative" data-aos="fade-up">
-      <img src="{{ destination.destination_image.url }}" class="destination-image img-fluid" alt="Pyramids">
-      <h1 class="image-title">{{ destination.destination_name }}</h1>
-    </div>
-    {% endfor %}
-  </div>
-</section>
 
 
 {% include 'testimonial.html' %}
