@@ -11,7 +11,7 @@ body {
   
   :root {
     --bg-color: #8B4513;
-    --second-bg-color: #8B45;
+    --second-bg-color: #8B4513;
     --text-color: #ffffff;
     --second-text-color: #381f0c;
 }
@@ -915,7 +915,6 @@ body {
   @media (max-width: 768px) {
     .itinerary-section {
       padding: 10px;
-      margin: 10px;
     }
     .booking-form {
       padding: 20px;
