@@ -230,8 +230,8 @@
           <div class="row">
             {% for destination in group %}
               <div class="col-md-4">
-                <img src="{{ destination.destination_image.url }}" class="d-block w-100 img-fluid" alt="{{ destination.destination_name }}">
-                <h5 class="mt-2">{{ destination.destination_name }}</h5>
+                <img src="{{ destination.destination_image.url }}" class="d-block w-100 img-fluid destination-image " alt="{{ destination.destination_name }}">
+                <h5 class="mt-2 image-title">{{ destination.destination_name }}</h5>
               </div>
             {% endfor %}
           </div>
